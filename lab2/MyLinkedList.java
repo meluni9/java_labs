@@ -86,7 +86,6 @@ public class MyLinkedList implements MyList {
     @Override
     public void addAll(int index, Object[] c) {
         checkIndexForAdd(index);
-        // Спрощена реалізація через цикл для економії коду
         for (Object o : c) {
             add(index++, o);
         }

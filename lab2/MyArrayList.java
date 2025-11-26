@@ -50,7 +50,6 @@ public class MyArrayList implements MyList, RandomAccess {
     public void add(int index, Object element) {
         checkIndexForAdd(index);
         ensureCapacity(size + 1);
-        // Зсуваємо елементи вправо
         System.arraycopy(elementData, index, elementData, index + 1, size - index);
         elementData[index] = element;
         size++;
@@ -89,7 +88,7 @@ public class MyArrayList implements MyList, RandomAccess {
         if (numMoved > 0) {
             System.arraycopy(elementData, index + 1, elementData, index, numMoved);
         }
-        elementData[--size] = null; // clear to let GC do its work
+        elementData[--size] = null; 
         return oldValue;
     }
 
